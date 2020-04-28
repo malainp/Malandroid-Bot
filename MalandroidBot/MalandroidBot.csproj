@@ -20,5 +20,6 @@
   <ItemGroup>
     <Folder Include="Core\" />
     <Folder Include="Functions\" />
+    <Folder Include="Core\GitComments\" />
   </ItemGroup>
 </Project>
