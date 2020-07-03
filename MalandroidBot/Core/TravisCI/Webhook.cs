@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+
 namespace MalandroidBot.Core.TravisCI
 {
-    public class Webhook
+    public partial class Webhook
     {
-        public Webhook()
-        {
-        }
+        [JsonProperty("urls")]
+        public List<Uri> Urls { get; set; }
     }
 }
