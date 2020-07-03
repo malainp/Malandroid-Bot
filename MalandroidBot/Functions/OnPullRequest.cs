@@ -69,13 +69,13 @@ namespace MalandroidBot.Functions
             switch (pr.Action)
             {
                 case PullRequestAction.Closed:
-                    color = Consts.CLOSED_COLOR;
+                    color = Consts.GREEN;
                     break;
                 case PullRequestAction.Edited:
-                    color = Consts.EDITED_COLOR;
+                    color = Consts.ORANGE;
                     break;
                 default:
-                    color = Consts.OPENED_COLOR;
+                    color = Consts.YELLOW;
                     break;
             }
 
