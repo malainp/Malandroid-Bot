@@ -21,5 +21,6 @@
     <Folder Include="Core\" />
     <Folder Include="Functions\" />
     <Folder Include="Core\GitComments\" />
+    <Folder Include="Core\TravisCI\" />
   </ItemGroup>
 </Project>
