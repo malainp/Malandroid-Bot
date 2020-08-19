@@ -11,6 +11,7 @@ using MalandroidBot.Core.TravisCI;
 using MalandroidBot.Core;
 using SlackBotMessages;
 using SlackBotMessages.Models;
+using System.Net;
 
 namespace MalandroidBot.Functions
 {
@@ -22,12 +23,13 @@ namespace MalandroidBot.Functions
             ILogger log)
         {
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            requestBody = WebUtility.UrlDecode(requestBody.Replace("payload=", ""));
             TravisCiWebhook? data;
             try
             {
                 data = JsonConvert.DeserializeObject<TravisCiWebhook>(requestBody);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return new BadRequestObjectResult("Strike!");
             }
